@@ -50,3 +50,8 @@ INSERT INTO detail (id, ncom_id, npro_id, qcom) VALUES
 (12,7	,	4,	22),
 (13,7	,	5,	70),
 (14,7	,	6,	92);
+
+INSERT INTO "post" ("id", "slug", "title", "excerpt", "content") VALUES
+(1,	'post-1',	'Message de début',	'Bonjour',	'Bonjour à tout le monde'),
+(2,	'post-2',	'Message de fin',	'Au revoir',	'Au revoir à tous');
+
