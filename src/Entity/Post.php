@@ -9,7 +9,8 @@ use Doctrine\ORM\Mapping as ORM;
 class Post
 {
     #[ORM\Id]
-    #[ORM\GeneratedValue]
+    #[ORM\GeneratedValue(strategy: "SEQUENCE")]
+    #[ORM\SequenceGenerator(sequenceName:"commande_seq",initialValue:3)]
     #[ORM\Column]
     private ?int $id = null;
 
@@ -76,5 +77,10 @@ class Post
         $this->content = $content;
 
         return $this;
+    }
+
+    public function __toString(): string 
+    {
+        return $this->getSlug()." : ".$this->getTitle();
     }
 }
